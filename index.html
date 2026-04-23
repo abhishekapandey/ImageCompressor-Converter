@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Tool</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #1e1e1e;
+            color: white;
+            text-align: center;
+        }
+
+        .box {
+            margin-top: 50px;
+            padding: 20px;
+            background: #2b2b2b;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Image Compressor & PDF Tool</h2>
+
+    <form action="/process" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="image" required><br>
+
+        <input type="number" name="target_kb" placeholder="Target KB" value="100"><br>
+
+        <button type="submit" name="action" value="compress">Compress</button>
+        <button type="submit" name="action" value="pdf">Convert to PDF</button>
+
+    </form>
+
+    {% if original %}
+        <p>Original Size: {{ original }} KB</p>
+    {% endif %}
+
+    {% if compressed %}
+        <p>Compressed Size: {{ compressed }} KB</p>
+        <a href="/static/output.jpg" download>Download Image</a>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
