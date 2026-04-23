@@ -1,0 +1,1 @@
+In this project, we can compress or convert our image into pdf. For compressing, you need to upload the file and then provide the desired size(in kb) in which you want the output file. This project is made with the help flask tool in python for backend. HTML is used for frontend. 
